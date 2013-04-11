@@ -1,11 +1,31 @@
-confirm("Are you ready?");
+var randomNumber;
+var ready2Play = "Are you ready to play?"; 
+function setRandom() {
+    randomNumber = Math.floor((Math.random()*9.5) +1);
+    //Math.floor((Math.random()*9.5)+1);
+}
+function confirmFunction() {
+    var bool = confirm(ready2Play);
+    if (bool == true) {
+        guessTheNumber(); 
+    }
+}   
 
-//var answer = Math.floor(Math.random()*11);
-
+function guessTheNumber() {
 var theNumber = Number(prompt("Pick a number", ""));
-    if (theNumber >= 6)
+    if (theNumber > randomNumber) {
         alert("too high");
-    if (theNumber <= 4)
+        guessTheNumber();
+    } else if (theNumber < randomNumber) {
         alert("too low");
-    if (theNumber == 5)
+        guessTheNumber();
+    } else if (theNumber == randomNumber) {
         alert("awesome");
+        setRandom();
+        confirmFunction();      
+    }
+    
+}
+
+setRandom();
+confirmFunction();
