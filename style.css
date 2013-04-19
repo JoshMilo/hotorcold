@@ -1,10 +1,12 @@
 html {
-    background: #BDC3C7;
+    /*background: #BDC3C7; */
+    background: url("squairy_light.png") repeat;
 }
 
 body {
     width: 960px;
     margin: 0 auto;
+
 }
 
 header {
@@ -44,7 +46,7 @@ h2, p {
 
 .btn {
     border: none;
-    background: #1abc9c;
+    background: #E74C3C;
     color: white;
     font-size: 16.5px;
     text-decoration: none;
@@ -82,5 +84,5 @@ h2, p {
 }
 
 .replay:active {
-    background-color: #1abc9c;
+    background-color: #E74C3C;
 }
