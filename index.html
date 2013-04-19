@@ -5,7 +5,7 @@
 	<title>Hot or Cold</title>
 	<link rel="stylesheet" href="style.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
-	<!--<script src="app.js"></script> -->
+	<script src="app.js"></script>
 </head>
 <body>
     <header>
@@ -15,10 +15,11 @@
     <div>
 	    <h2>go ahead and take a guess.</h2>
 	    <label for="txtbox"></label><input type="text" name="txtbox" id="txtbox" maxlength="2" autocomplete="off">
+	    <p id="message"> </p>
 
 	</div>
-        <input type="submit" name="submit" id="submit" class="btn submit">
-        <button id="playagain" class="btn replay">Play Again</button>
+        <input type="button" name="submit" id="submit" class="btn submit" value="Submit" onclick="guessTheNumber()">
+        <button id="playagain" class="btn replay" onclick="replay()">Play Again</button>
 
 </body>
 </html>

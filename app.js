@@ -1,34 +1,37 @@
+
+
 var randomNumber;
-var ready2Play = "Are you ready to play?"; 
+var hasWon = false;
+
+
 function setRandom() {
     randomNumber = Math.floor((Math.random()*9.5) +1);
-    //Math.floor((Math.random()*9.5)+1);
-}
-function confirmFunction() {
-    var bool = confirm(ready2Play);
-    if (bool == true) {
-        guessTheNumber(); 
-    }
-}   
-
-function guessTheNumber() {
-var theNumber = Number(prompt("Pick a number", ""));
-    if (theNumber > randomNumber) {
-        alert("too high");
-        guessTheNumber();
-    } else if (theNumber < randomNumber) {
-        alert("too low");
-        guessTheNumber();
-    } else if (theNumber == randomNumber) {
-        alert("awesome");
-        setRandom();
-        confirmFunction();      
-    }
-    
 }
 
 setRandom();
-confirmFunction();
 
+function guessTheNumber() {
+    var theNumber = Number(document.getElementById("txtbox").value);
+    var message = document.getElementById("message");
+    if (hasWon === true) {
+        return;
+    }
+   if (theNumber > randomNumber) {
+        message.innerHTML = "too high";
+} else if (theNumber < randomNumber) {
+        message.innerHTML = "too low";
+} else if (theNumber == randomNumber) {
+       message.innerHTML = "awesome";
+       hasWon = true;
+} else {
+   alert("What's going on?");
+   }
+}
 
-document.getElementById("txtbox").value
+function replay() {
+    document.getElementById("txtbox").value = '';
+    document.getElementById("message").innerHTML = ' ';
+    setRandom();
+    hasWon = false;
+}
+
