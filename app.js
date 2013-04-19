@@ -29,3 +29,6 @@ var theNumber = Number(prompt("Pick a number", ""));
 
 setRandom();
 confirmFunction();
+
+
+document.getElementById("txtbox").value
